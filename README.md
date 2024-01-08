@@ -1,7 +1,5 @@
 <h1> Customer Reviews / Text Analysis Project 
 
-![Text-Analysis](https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/047592be-54f2-46ec-bfd9-1443c0090bd8)
-
 # Background:
 
 In this project, I am tasked to analyze customer reviews for a toy product on an e-commerce platform. The primary objective is to gain insights into the reception of the product among its purchasers. The analysis involves exploring sentiments, identifying common positive and negative aspects, and understanding the overall customer satisfaction. 
@@ -9,6 +7,14 @@ In this project, I am tasked to analyze customer reviews for a toy product on an
 # Analysis:
 
 ### 1. Data preprocessing 
+
+```php
+# Create WordCloud for dataset and remove stopwords like 'https'
+import nltk
+from nltk.corpus import stopwords
+from spacy.lang.en.stop_words import STOP_WORDS
+from wordcloud import WordCloud
+```
 
 ```php
 # Create stopword list:
@@ -23,16 +29,8 @@ plt.axis("off")
 plt.savefig('wordcloud11.png')
 plt.show()
 ```
+<img width="399" alt="Screenshot 2024-01-08 at 8 06 52 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/b06dfb56-07ef-4cb3-84ff-5753206f5ebf">
 
-```php
-# Create WordCloud for dataset and remove stopwords like 'https'
-import nltk
-from nltk.corpus import stopwords
-from spacy.lang.en.stop_words import STOP_WORDS
-from wordcloud import WordCloud
-```
-
-<img width="402" alt="Screenshot 2024-01-08 at 7 47 50 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/e3c34e75-39a5-4319-aeda-1d96d469549d">
 
 ### 2. Data cleaning and preparation  
 
@@ -61,7 +59,7 @@ plt.axis("off")
 plt.show()
 ```
 
-<img width="398" alt="Screenshot 2024-01-08 at 7 47 25 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/1221f43b-5bc7-4361-9ef7-cdd2748020c7">
+<img width="402" alt="Screenshot 2024-01-08 at 8 07 10 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/bac93240-6db6-44fe-8a4d-fe443404b9d3">
 
 
 ```php
@@ -70,7 +68,7 @@ for i in positive[positive['translated'].str.contains("otter")]['translated'].il
     print(i,'\n')
 ```
 
-<img width="759" alt="Screenshot 2024-01-08 at 7 47 05 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/e4bb7ed6-ba22-4341-8a85-c4a30ff34ac9">
+<img width="744" alt="Screenshot 2024-01-08 at 8 07 27 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/9730911b-de2f-49d6-b7bb-74b12666f2d5">
 
 
 ### 4. Create a Wordcloud for negative sentiments
@@ -85,7 +83,7 @@ plt.savefig('wordcloud33.png')
 plt.show()
 ```
 
-<img width="402" alt="Screenshot 2024-01-08 at 7 46 42 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/90fd6dd1-1505-4a30-8a7a-4e2991357e63">
+<img width="396" alt="Screenshot 2024-01-08 at 8 07 41 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/68535aba-44b5-4d2e-b851-54b54bce7732">
 
 
 ```php
@@ -94,7 +92,7 @@ for i in negative[negative['translated'].str.contains("otter")]['translated'].il
     print(i,'\n')
 ```
 
-<img width="740" alt="Screenshot 2024-01-08 at 7 46 19 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/48d22efe-0423-44cd-8e51-6d4921c1acaf">
+<img width="747" alt="Screenshot 2024-01-08 at 8 08 03 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/ced0710c-3587-4333-8a82-03306364cbf2">
 
 
 ### 5. Distribution of Sentiments amongst samples
@@ -111,6 +109,9 @@ fig.update_layout(title_text='Product Sentiment')
 fig.show()
 ```
 
+<img width="694" alt="Screenshot 2024-01-08 at 8 08 38 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/a525cf86-2473-4488-8487-bb23102940e0">
+
+
 ### 6. Distribution of Score
 
 ```php
@@ -122,11 +123,7 @@ fig.update_layout(title_text='Stars Rating Score')
 fig.show()
 ```
 
-<img width="688" alt="Screenshot 2024-01-08 at 7 48 51 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/349d36dc-da18-4593-9751-682310ba7ebc">
-
-
-
-<img width="836" alt="Screenshot 2024-01-08 at 7 45 56 PM" src="https://github.com/phanhoangminh99/Text-Analysis/assets/115093313/3f37b725-537e-4a04-8cba-f8ff312cfdef">
+<img width="689" alt="Screenshot 2024-01-08 at 8 08 29 PM" src="https://github.com/phanhoangminh99/Text-Analysis-/assets/115093313/fb457538-f8b5-45d9-b800-f88893e6ac57">
 
 
 # Conclusion: 
